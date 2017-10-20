@@ -3,7 +3,7 @@ import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.`is`
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
-import usecases.createBitcoinWalletGenerator
+import net.rossharper.koin.usecases.createBitcoinWalletGenerator
 
 @RunWith(Parameterized::class)
 class BitcoinWalletGeneratorShould (val testVector: TestVector) {

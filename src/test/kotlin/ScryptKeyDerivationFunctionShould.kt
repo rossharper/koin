@@ -1,4 +1,4 @@
-import keyderivation.ScryptKeyDerivationFunction
+import net.rossharper.koin.keyderivation.ScryptKeyDerivationFunction
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.`is`
 import org.junit.Test

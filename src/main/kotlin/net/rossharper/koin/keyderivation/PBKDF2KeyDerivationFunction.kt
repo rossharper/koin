@@ -1,4 +1,4 @@
-package keyderivation
+package net.rossharper.koin.keyderivation
 
 import org.bouncycastle.crypto.digests.SHA256Digest
 import org.bouncycastle.crypto.generators.PKCS5S2ParametersGenerator

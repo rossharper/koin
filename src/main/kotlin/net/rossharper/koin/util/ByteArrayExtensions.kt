@@ -1,6 +1,6 @@
-package util
+package net.rossharper.koin.util
 
-import base58.Base58Encoder
+import net.rossharper.koin.base58.Base58Encoder
 import kotlin.experimental.xor
 
 fun ByteArray.toBase58(): String {

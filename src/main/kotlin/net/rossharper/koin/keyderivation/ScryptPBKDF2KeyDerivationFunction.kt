@@ -1,6 +1,6 @@
-package keyderivation
+package net.rossharper.koin.keyderivation
 
-import util.xor
+import net.rossharper.koin.util.xor
 
 class ScryptPBKDF2KeyDerivationFunction : KeyDerivationFunction {
     override fun deriveKey(seed: ByteArray, salt: ByteArray): ByteArray {

@@ -6,16 +6,19 @@ buildscript {
 
     repositories {
         mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.github.jengelman.gradle.plugins:shadow:1.2.3"
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'kotlin'
-
-sourceCompatibility = 1.8
+apply plugin: 'application'
+apply plugin: 'com.github.johnrengelman.shadow'
+mainClassName = 'net.rossharper.koin.Koin'
 
 repositories {
     mavenCentral()
@@ -36,3 +39,5 @@ compileKotlin {
 compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
+
+jar { manifest { attributes 'Main-Class': 'net.rossharper.koin.Koin' } }

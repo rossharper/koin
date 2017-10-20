@@ -1,4 +1,4 @@
-import keyderivation.PBKDF2KeyDerivationFunction
+import net.rossharper.koin.keyderivation.PBKDF2KeyDerivationFunction
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.`is`
 import org.junit.Test

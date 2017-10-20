@@ -1,4 +1,4 @@
-package keyderivation
+package net.rossharper.koin.keyderivation
 
 import org.bouncycastle.crypto.generators.SCrypt
 

@@ -1,6 +1,6 @@
-package keyderivation
+package net.rossharper.koin.keyderivation
 
-import keyderivation.PublicKeyDerivationFunction
+import net.rossharper.koin.keyderivation.PublicKeyDerivationFunction
 import org.bouncycastle.jce.ECNamedCurveTable
 import java.math.BigInteger
 import java.security.MessageDigest

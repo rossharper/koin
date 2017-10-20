@@ -1,7 +1,7 @@
 package net.rossharper.koin.model
 
-import util.toBase58
-import util.unshift
+import net.rossharper.koin.util.toBase58
+import net.rossharper.koin.util.unshift
 import java.security.MessageDigest
 
 data class PrivateKey(val bytes : ByteArray) {

@@ -1,4 +1,4 @@
-package base58
+package net.rossharper.koin.base58
 
 class Base58Encoder {
     private val alphabet = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz".toCharArray()
