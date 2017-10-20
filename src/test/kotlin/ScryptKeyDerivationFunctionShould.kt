@@ -1,7 +1,6 @@
 import keyderivation.ScryptKeyDerivationFunction
-import org.bouncycastle.util.encoders.Hex
-import org.hamcrest.MatcherAssert
-import org.hamcrest.Matchers
+import org.hamcrest.MatcherAssert.assertThat
+import org.hamcrest.Matchers.`is`
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
@@ -20,6 +19,6 @@ class ScryptKeyDerivationFunctionShould(val testVector: TestVector) {
     fun deriveKeyFromSeedAndSalt() {
         val sut = ScryptKeyDerivationFunction()
         val result = sut.deriveKey(testVector.passphrase.toByteArray(Charsets.UTF_8).plus(0x1), testVector.salt.toByteArray(Charsets.UTF_8).plus(0x1))
-        MatcherAssert.assertThat(result, Matchers.`is`(testVector.seeds[0].toHexDecodedByteArray()))
+        assertThat(result, `is`(testVector.seeds[0].toHexDecodedByteArray()))
     }
 }
