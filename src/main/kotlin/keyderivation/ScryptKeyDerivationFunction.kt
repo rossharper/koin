@@ -2,7 +2,7 @@ package keyderivation
 
 import org.bouncycastle.crypto.generators.SCrypt
 
-class SCryptKeyDerivationFunction : KeyDerivationFunction {
+class ScryptKeyDerivationFunction : KeyDerivationFunction {
     private val iterations = Math.pow(2.0, 18.0).toInt()
     private val keyLengthBytes = 32
     private val r = 8

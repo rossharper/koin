@@ -1,4 +1,4 @@
-import keyderivation.SCryptKeyDerivationFunction
+import keyderivation.ScryptKeyDerivationFunction
 import org.bouncycastle.util.encoders.Hex
 import org.hamcrest.MatcherAssert
 import org.hamcrest.Matchers
@@ -7,7 +7,7 @@ import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 
 @RunWith(Parameterized::class)
-class SCryptKeyDerivationFunctionShould(val testVector: TestVector) {
+class ScryptKeyDerivationFunctionShould(val testVector: TestVector) {
     companion object {
         @JvmStatic
         @Parameterized.Parameters
@@ -18,10 +18,8 @@ class SCryptKeyDerivationFunctionShould(val testVector: TestVector) {
 
     @Test
     fun deriveKeyFromSeedAndSalt() {
-        val sut = SCryptKeyDerivationFunction()
+        val sut = ScryptKeyDerivationFunction()
         val result = sut.deriveKey(testVector.passphrase.toByteArray(Charsets.UTF_8).plus(0x1), testVector.salt.toByteArray(Charsets.UTF_8).plus(0x1))
         MatcherAssert.assertThat(result, Matchers.`is`(testVector.seeds[0].toHexDecodedByteArray()))
     }
 }
-
-private fun String.toHexDecodedByteArray(): ByteArray = Hex.decode(this)
