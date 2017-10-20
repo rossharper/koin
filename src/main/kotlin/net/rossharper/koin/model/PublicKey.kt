@@ -1,6 +1,6 @@
 package net.rossharper.koin.model
 
-import util.base58
+import util.toBase58
 import util.unshift
 import java.security.MessageDigest
 
@@ -14,6 +14,6 @@ data class PublicKey(val bytes: ByteArray) {
             val pubKeyChecksum = MessageDigest.getInstance("SHA-256").digest(MessageDigest.getInstance("SHA-256").digest(addressHash))
             // Address = checksummed address hash
             val address = addressHash.plus(pubKeyChecksum.copyOfRange(0, 4))
-            return address.base58
+            return address.toBase58()
         }
 }

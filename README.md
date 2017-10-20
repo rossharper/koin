@@ -1,3 +1,1 @@
-TODO
-- function update script
-
+You probably shouldn't use this.

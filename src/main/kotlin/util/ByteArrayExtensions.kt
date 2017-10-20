@@ -1,11 +1,11 @@
 package util
 
+import base58.Base58Encoder
 import kotlin.experimental.xor
 
-val ByteArray.base58: String
-    get() {
-        return Base58Encoder().encode(this)
-    }
+fun ByteArray.toBase58(): String {
+    return Base58Encoder().encode(this)
+}
 
 fun ByteArray.unshift(value: Byte) : ByteArray {
     return byteArrayOf(value).plus(this)

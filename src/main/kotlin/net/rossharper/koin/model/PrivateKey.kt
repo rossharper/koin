@@ -1,6 +1,6 @@
 package net.rossharper.koin.model
 
-import util.base58
+import util.toBase58
 import util.unshift
 import java.security.MessageDigest
 
@@ -11,6 +11,6 @@ data class PrivateKey(val bytes : ByteArray) {
             val shaDigest = MessageDigest.getInstance("SHA-256")
             val checksum = shaDigest.digest(shaDigest.digest(eckeybytes))
             val checksummedKey = eckeybytes.plus(checksum.copyOfRange(0, 4))
-            return checksummedKey.base58
+            return checksummedKey.toBase58()
         }
 }
