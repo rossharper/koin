@@ -8,26 +8,11 @@ data class Keys(val private: String, val public: String)
 
 fun loadTestSpec(): TestSpec
         = parseTestSpec(readStringFromResource(
-        BitcoinWalletGeneratorShould::class.java.classLoader,
-        "warpwallettestspec.json"))
+            BitcoinWalletGeneratorShould::class.java.classLoader,
+            "warpwallettestspec.json"))
 
-private fun parseTestSpec(json: String): TestSpec {
-    return Moshi.Builder().build().adapter(TestSpec::class.java).fromJson(json)!!
-}
+private fun parseTestSpec(json: String): TestSpec
+        = Moshi.Builder().build().adapter(TestSpec::class.java).fromJson(json)!!
 
-private fun readStringFromResource(classLoader: ClassLoader, resourceName: String): String {
-
-    val inputStream = classLoader.getResourceAsStream(resourceName)
-    val streamReader = InputStreamReader(inputStream)
-    val stringBuilder = StringBuilder()
-    val bufferedReader = BufferedReader(streamReader)
-
-    var read: String? = bufferedReader.readLine()
-
-    while (read != null) {
-        stringBuilder.append(read)
-        read = bufferedReader.readLine()
-    }
-
-    return stringBuilder.toString()
-}
+private fun readStringFromResource(classLoader: ClassLoader, resourceName: String): String
+        = classLoader.getResourceAsStream(resourceName).bufferedReader().readText()
